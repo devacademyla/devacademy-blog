@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
     <!-- Loading Work Sans to fit to devAcademy standards -->
     <link href='https://fonts.googleapis.com/css?family=Work+Sans' rel='stylesheet' type='text/css'>
+    <link rel="shortcut icon" type="image/x-icon" href="{Favicon}">
     <meta name="text:Logo Alt Text" content="devAcademy">
     <meta name="color:Background Color" content="#fff">
     <meta name="color:Post Title Color" content="#00B8F4">
@@ -69,7 +70,7 @@
     
     .post {
         background: {color:Post Background Color};
-        border-radius: 1em;
+        border-radius: 0.25em;
         padding: 1em;
         margin: 1em 0 1em 0;
     }
@@ -83,6 +84,7 @@
         border-bottom: 2px solid #002830;
     }
     </style>
+
 </head>
 
 <body>
@@ -110,7 +112,6 @@
                 <div class="post-description">
                     {Body} {block:HasTags}
                     <p>{block:Tags}<a href="{TagURL}">#{Tag}</a>&nbsp;{/block:Tags}</p>{/block:HasTags}
-                    <p> </p>
                 </div>
             </div>
             <!-- ./text.post -->{/block:Text} {block:Photo}
@@ -134,64 +135,105 @@
                 <a href="{Permalink}">{LinkOpenTag}<img src="{PhotoURL-Panorama}" alt="{PhotoAlt}" />{LinkCloseTag}</a>
                 <hr class="separator">
                 <div class="post-description">
-                    {block:Caption} {Caption} {/block:Caption}
+                    {block:Caption} {Caption} {/block:Caption}{block:HasTags}
+                    <p>{block:Tags}<a href="{TagURL}">#{Tag}</a>&nbsp;{/block:Tags}</p>{/block:HasTags}
                 </div>
             </div>
             <!-- ./panorama.post -->{/block:Panorama} {block:Photoset}
             <!-- photoset.post -->
             <div class="row post">
+                <img src="{PostAuthorPortraitURL-40}" alt="{PostAuthorTitle}" class="img-circle" />
+                <span class="post-author">
+                        Publicado por: <a href="{PostAuthorURL}">{PostAuthorTitle}</a> <span class="pull-right">{block:Date}<a href="{PostURL}">{TimeAgo}</a>{/block:Date}</span>
+                </span>
                 {Photoset-500}
                 <hr class="separator">
                 <div class="post-description">
-                    {block:Caption} {Caption} {/block:Caption}
+                    {block:Caption} {Caption} {/block:Caption}{block:HasTags}
+                    <p>{block:Tags}<a href="{TagURL}">#{Tag}</a>&nbsp;{/block:Tags}</p>{/block:HasTags}
                 </div>
             </div>
             <!-- ./photoset.post -->{/block:Photoset} {block:Quote}
             <!-- quote.post -->
             <div class="row post">
-                <h1 id="title"><a href="{Permalink}">{Quote}</a></h1>
+                <img src="{PostAuthorPortraitURL-40}" alt="{PostAuthorTitle}" class="img-circle" />
+                <span class="post-author">
+                        Publicado por: <a href="{PostAuthorURL}">{PostAuthorTitle}</a> <span class="pull-right">{block:Date}<a href="{PostURL}">{TimeAgo}</a>{/block:Date}</span>
+                </span>
+                <blockquote>
+                    <h1 id="title"><a href="{Permalink}">"{Quote}"</a></h1>
+                </blockquote>
+                {block:Source}{Source}{/block:Source}
                 <hr class="separator">
-                <div class="post-description">{block:Source} {Source}{/block:Source}
+                <div class="post-description">{block:HasTags}
+                    <p>{block:Tags}<a href="{TagURL}">#{Tag}</a>&nbsp;{/block:Tags}</p>{/block:HasTags}
                 </div>
             </div>
             <!-- ./quote.post -->{/block:Quote} {block:Link}
             <!-- link.post -->
             <div class="row post">
-                <h1 id="title"><a href="{Permalink}">{Title}</a></h1>
+                <img src="{PostAuthorPortraitURL-40}" alt="{PostAuthorTitle}" class="img-circle" />
+                <span class="post-author">
+                        Publicado por: <a href="{PostAuthorURL}">{PostAuthorTitle}</a> <span class="pull-right">{block:Date}<a href="{PostURL}">{TimeAgo}</a>{/block:Date}</span>
+                </span>{block:Thumbnail} <img src="{Thumbnail}" alt="{Name}" class="img-responsive img-thumbnail"> {/block:Thumbnail}
+                <h1 id="title"><a {Target} href="{URL}">{Name}</a></h1> ({Host}) {block:Excerpt}
+                <blockquote>{Excerpt}</blockquote> {/block:Excerpt}
                 <hr class="separator">
                 <div class="post-description">
+                    {block:Description}{Description}{/block:Description}{block:HasTags}
+                    <p>{block:Tags}<a href="{TagURL}">#{Tag}</a>&nbsp;{/block:Tags}</p>{/block:HasTags}
                 </div>
             </div>
             <!-- ./link.post -->{/block:Link} {block:Chat}
             <!-- chat.post -->
             <div class="row post">
+                <img src="{PostAuthorPortraitURL-40}" alt="{PostAuthorTitle}" class="img-circle" />
+                <span class="post-author">
+                        Publicado por: <a href="{PostAuthorURL}">{PostAuthorTitle}</a> <span class="pull-right">{block:Date}<a href="{PostURL}">{TimeAgo}</a>{/block:Date}</span>
+                </span>
                 <h1 id="title"><a href="{Permalink}">{Title}</a></h1>
                 <hr class="separator">
-                <div class="post-description">
+                <div class="post-description">{block:HasTags}
+                    <p>{block:Tags}<a href="{TagURL}">#{Tag}</a>&nbsp;{/block:Tags}</p>{/block:HasTags}
                 </div>
             </div>
             <!-- ./chat.post -->{/block:Chat} {block:Audio}
             <!-- audio.post -->
             <div class="row post">
+                <img src="{PostAuthorPortraitURL-40}" alt="{PostAuthorTitle}" class="img-circle" />
+                <span class="post-author">
+                        Publicado por: <a href="{PostAuthorURL}">{PostAuthorTitle}</a> <span class="pull-right">{block:Date}<a href="{PostURL}">{TimeAgo}</a>{/block:Date}</span>
+                </span>
                 <h1 id="title"><a href="{Permalink}">{Title}</a></h1>
                 <hr class="separator">
-                <div class="post-description">
+                <div class="post-description">{block:HasTags}
+                    <p>{block:Tags}<a href="{TagURL}">#{Tag}</a>&nbsp;{/block:Tags}</p>{/block:HasTags}
                 </div>
             </div>
             <!-- ./audio.post -->{/block:Audio} {block:Video}
             <!-- video.post -->
             <div class="row post">
+                <img src="{PostAuthorPortraitURL-40}" alt="{PostAuthorTitle}" class="img-circle" />
+                <span class="post-author">
+                        Publicado por: <a href="{PostAuthorURL}">{PostAuthorTitle}</a> <span class="pull-right">{block:Date}<a href="{PostURL}">{TimeAgo}</a>{/block:Date}</span>
+                </span>
                 <h1 id="title"><a href="{Permalink}">{Title}</a></h1>
                 <hr class="separator">
-                <div class="post-description">
+                <div class="post-description">{block:HasTags}
+                    <p>{block:Tags}<a href="{TagURL}">#{Tag}</a>&nbsp;{/block:Tags}</p>{/block:HasTags}
                 </div>
             </div>
             <!-- ./video.post -->{/block:Video} {block:Answer}
             <!-- answer.post -->
             <div class="row post">
+                <img src="{PostAuthorPortraitURL-40}" alt="{PostAuthorTitle}" class="img-circle" />
+                <span class="post-author">
+                        Publicado por: <a href="{PostAuthorURL}">{PostAuthorTitle}</a> <span class="pull-right">{block:Date}<a href="{PostURL}">{TimeAgo}</a>{/block:Date}</span>
+                </span>
                 <h1 id="title"><a href="{Permalink}">{Title}</a></h1>
                 <hr class="separator">
-                <div class="post-description">
+                <div class="post-description">{block:HasTags}
+                    <p>{block:Tags}<a href="{TagURL}">#{Tag}</a>&nbsp;{/block:Tags}</p>{/block:HasTags}
                 </div>
             </div>
             <!-- ./answer.post -->{/block:Answer}
