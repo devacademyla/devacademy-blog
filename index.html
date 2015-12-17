@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>{Title}</title>
+    <!-- Bootstrap as a framework! -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <!-- Loading Work Sans to fit to devAcademy standards -->
+    <link href='https://fonts.googleapis.com/css?family=Work+Sans' rel='stylesheet' type='text/css'>
+    <style>
+    body {
+        font-size: 15px;
+        line-height: 1.6em;
+        color: #002830;
+        background: #FFFFFF;
+    }
+    
+    * {
+        font-family: 'Work Sans', sans-serif !important;
+    }
+    
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        color: #00B8F4;
+        font-weight: bold;
+        text-align: center;
+    }
+    
+    a,
+    a:hover,
+    a:visited,
+    a:focus {
+        color: #00B7F7;
+    }
+    /* Header */
+    
+    .header {
+        padding: 20px;
+    }
+    
+    .logo {
+        width: 249px;
+        height: 40px;
+    }
+    /* Global post configuration */
+    
+    .separator {
+        border: none;
+        border-bottom: 2px solid #002830;
+        width: 80%;
+    }
+    </style>
+</head>
+
+<body>
+    <!-- header -->
+    <div class="header">
+        <div class="container">
+            <img src="http://i.imgur.com/e4PCG2O.png" alt="devAcademy Logo" title="devAcademy Blog" class="logo">
+        </div>
+    </div>
+    <!-- header -->
+    <div class="container">
+        <div class="col-md-8">
+            <!-- posts -->
+            {block:Posts}
+            <!-- text.post -->
+            {block:Text}
+            <div class="row post-all">
+                {block:Title}
+                <h2 id="title"><a href="{Permalink}">{Title}</a></h2>
+                <hr class="separator"> {/block:Title}
+                <div class="post-description">
+                    {Body}
+                </div>
+            </div>
+            {/block:Text}
+            <!-- ./text.post -->
+            <!-- photo.post -->
+            {block:Photo}
+            <div class="row post">
+                <h2 id="title"><a href="{Permalink}">{Title}</a></h2>
+                <hr class="separator">
+                <div class="post-description">
+                </div>
+            </div> {/block:Photo}
+            <!-- ./photo.post -->
+            <!-- panorama.post -->
+            {block:Panorama}
+            <div class="row post">
+                <h2 id="title"><a href="{Permalink}">{Title}</a></h2>
+                <hr class="separator">
+                <div class="post-description">
+                </div>
+            </div> {/block:Panorama}
+            <!-- ./panorama.post -->
+            <!-- photoset.post -->
+            {block:Photoset}
+            <div class="row post">
+                <h2 id="title"><a href="{Permalink}">{Title}</a></h2>
+                <hr class="separator">
+                <div class="post-description">
+                </div>
+            </div>{/block:Photoset}
+            <!-- ./photoset.post -->
+            <!-- quote.post -->
+            {block:Quote}
+            <div class="row post">
+                <h2 id="title"><a href="{Permalink}">{Title}</a></h2>
+                <hr class="separator">
+                <div class="post-description">
+                </div>
+            </div> {/block:Quote}
+            <!-- ./quote.post -->
+            {block:Link}
+            <div class="row post">
+                <h2 id="title"><a href="{Permalink}">{Title}</a></h2>
+                <hr class="separator">
+                <div class="post-description">
+                </div>
+            </div> {/block:Link}
+            <!-- link.post -->
+            {block:Chat}
+            <div class="row post">
+                <h2 id="title"><a href="{Permalink}">{Title}</a></h2>
+                <hr class="separator">
+                <div class="post-description">
+                </div>
+            </div>{/block:Chat}
+            <!-- ./link.post -->
+            <!-- audio.post -->
+            {block:Audio}
+            <div class="row post">
+                <h2 id="title"><a href="{Permalink}">{Title}</a></h2>
+                <hr class="separator">
+                <div class="post-description">
+                </div>
+            </div>{/block:Audio}
+            <!-- ./audio.post -->
+            <!-- video.post -->
+            {block:Video}
+            <div class="row post">
+                <h2 id="title"><a href="{Permalink}">{Title}</a></h2>
+                <hr class="separator">
+                <div class="post-description">
+                </div>
+            </div>{/block:Video}
+            <!-- ./video.post -->
+            <!-- answer.post -->
+            {block:Answer}
+            <div class="row post">
+                <h2 id="title"><a href="{Permalink}">{Title}</a></h2>
+                <hr class="separator">
+                <div class="post-description">
+                </div>
+            </div> {/block:Answer}
+            <!-- ./answer.post -->>
+            {/block:Posts}
+            <!-- ./posts -->
+        </div>
+    </div>
+    <!-- jquery.js -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- bootstrap.js -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+</body>
+
+</html>
