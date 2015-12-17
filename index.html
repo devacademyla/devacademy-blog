@@ -8,16 +8,26 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
     <!-- Loading Work Sans to fit to devAcademy standards -->
     <link href='https://fonts.googleapis.com/css?family=Work+Sans' rel='stylesheet' type='text/css'>
+    <meta name="text:Logo Alt Text" content="devAcademy">
+    <meta name="color:Background Color" content="#fff">
+    <meta name="color:Post Title Color" content="#00B8F4">
+    <meta name="color:Header Background Color" content="#ECEDEE">
+    <meta name="color:Text Color" content="#002830">
+    <meta name="color:Post Background Color" content="#fff">
     <style>
     body {
         font-size: 15px;
         line-height: 1.6em;
-        color: #002830;
-        background: #FFFFFF;
+        color: {color:Text Color};
+        background: {color:Background Color};
     }
     
     * {
         font-family: 'Work Sans', sans-serif !important;
+    }
+    
+    #title {
+        color: {color:Post Title Color};
     }
     
     h1,
@@ -26,9 +36,8 @@
     h4,
     h5,
     h6 {
-        color: #00B8F4;
         font-weight: bold;
-        text-align: center;
+        text-align: left;
     }
     
     a,
@@ -41,6 +50,7 @@
     
     .header {
         padding: 20px;
+        background: {color:Header Background Color};
     }
     
     .logo {
@@ -49,10 +59,20 @@
     }
     /* Global post configuration */
     
+    .post {
+        background: {color:Post Background Color};
+        border-radius: 1em;
+        padding: 1em;
+        margin: 1em 0 1em 0;
+    }
+
+    .post-author {
+        display: inline;
+    }
+
     .separator {
         border: none;
         border-bottom: 2px solid #002830;
-        width: 80%;
     }
     </style>
 </head>
@@ -61,113 +81,120 @@
     <!-- header -->
     <div class="header">
         <div class="container">
-            <img src="http://i.imgur.com/e4PCG2O.png" alt="devAcademy Logo" title="devAcademy Blog" class="logo">
+            <a href="{BlogURL}"><img src="http://i.imgur.com/e4PCG2O.png" alt="devAcademy Logo" title="{text:Logo Alt Text}" class="logo"></a>
         </div>
     </div>
-    <!-- header -->
+    <!-- ./header -->
     <div class="container">
-        <div class="col-md-8">
-            <!-- posts -->
+        <div class="col-md-12">
             {block:Posts}
-            <!-- text.post -->
+            <!-- post -->
             {block:Text}
-            <div class="row post-all">
+            <!-- text.post -->
+            <div class="row post">
+                <img src="{PostAuthorPortraitURL-40}" alt="{PostAuthorTitle}" class="img-circle" />
+                <span class="post-author">
+                        Publicado por: <a href="{PostAuthorURL}">{PostAuthorTitle}</a> <span class="pull-right">{block:Date}<a href="{PostURL}">{TimeAgo}</a>{/block:Date}</span>
+                </span>
                 {block:Title}
-                <h2 id="title"><a href="{Permalink}">{Title}</a></h2>
+                <h1 id="title"><a href="{Permalink}">{Title}</a></h1>
                 <hr class="separator"> {/block:Title}
                 <div class="post-description">
-                    {Body}
+                    {Body} {block:HasTags}
+                    <p>{block:Tags}<a href="{TagURL}">#{Tag}</a>&nbsp;{/block:Tags}</p>{/block:HasTags}
+                    <p> </p>
                 </div>
             </div>
-            {/block:Text}
-            <!-- ./text.post -->
+            <!-- ./text.post -->{/block:Text} {block:Photo}
             <!-- photo.post -->
-            {block:Photo}
             <div class="row post">
-                <h2 id="title"><a href="{Permalink}">{Title}</a></h2>
-                <hr class="separator">
+                <img src="{PostAuthorPortraitURL-40}" alt="{PostAuthorTitle}" class="img-circle" />
+                <span class="post-author">
+                        Publicado por: <a href="{PostAuthorURL}">{PostAuthorTitle}</a> <span class="pull-right">{block:Date}<a href="{PostURL}">{TimeAgo}</a>{/block:Date}</span>
+                </span>
+                <img src="{PhotoURL-500}" alt="{PhotoAlt}" />
+                <hr class="separator"> {block:Caption}
                 <div class="post-description">
+                    {Caption}{block:HasTags}
+                    <p>{block:Tags}<a href="{TagURL}">#{Tag}</a>&nbsp;{/block:Tags}</p>{/block:HasTags}
                 </div>
-            </div> {/block:Photo}
-            <!-- ./photo.post -->
+                {/block:Caption}
+            </div>
+            <!-- ./photo.post -->{/block:Photo} {block:Panorama}
             <!-- panorama.post -->
-            {block:Panorama}
             <div class="row post">
-                <h2 id="title"><a href="{Permalink}">{Title}</a></h2>
+                <a href="{Permalink}">{LinkOpenTag}<img src="{PhotoURL-Panorama}" alt="{PhotoAlt}" />{LinkCloseTag}</a>
                 <hr class="separator">
                 <div class="post-description">
+                    {block:Caption} {Caption} {/block:Caption}
                 </div>
-            </div> {/block:Panorama}
-            <!-- ./panorama.post -->
+            </div>
+            <!-- ./panorama.post -->{/block:Panorama} {block:Photoset}
             <!-- photoset.post -->
-            {block:Photoset}
             <div class="row post">
-                <h2 id="title"><a href="{Permalink}">{Title}</a></h2>
+                {Photoset-500}
                 <hr class="separator">
                 <div class="post-description">
+                    {block:Caption} {Caption} {/block:Caption}
                 </div>
-            </div>{/block:Photoset}
-            <!-- ./photoset.post -->
+            </div>
+            <!-- ./photoset.post -->{/block:Photoset} {block:Quote}
             <!-- quote.post -->
-            {block:Quote}
             <div class="row post">
-                <h2 id="title"><a href="{Permalink}">{Title}</a></h2>
+                <h1 id="title"><a href="{Permalink}">{Quote}</a></h1>
                 <hr class="separator">
-                <div class="post-description">
+                <div class="post-description">{block:Source} {Source}{/block:Source}
                 </div>
-            </div> {/block:Quote}
-            <!-- ./quote.post -->
-            {block:Link}
-            <div class="row post">
-                <h2 id="title"><a href="{Permalink}">{Title}</a></h2>
-                <hr class="separator">
-                <div class="post-description">
-                </div>
-            </div> {/block:Link}
+            </div>
+            <!-- ./quote.post -->{/block:Quote} {block:Link}
             <!-- link.post -->
-            {block:Chat}
             <div class="row post">
-                <h2 id="title"><a href="{Permalink}">{Title}</a></h2>
+                <h1 id="title"><a href="{Permalink}">{Title}</a></h1>
                 <hr class="separator">
                 <div class="post-description">
                 </div>
-            </div>{/block:Chat}
-            <!-- ./link.post -->
+            </div>
+            <!-- ./link.post -->{/block:Link} {block:Chat}
+            <!-- chat.post -->
+            <div class="row post">
+                <h1 id="title"><a href="{Permalink}">{Title}</a></h1>
+                <hr class="separator">
+                <div class="post-description">
+                </div>
+            </div>
+            <!-- ./chat.post -->{/block:Chat} {block:Audio}
             <!-- audio.post -->
-            {block:Audio}
             <div class="row post">
-                <h2 id="title"><a href="{Permalink}">{Title}</a></h2>
+                <h1 id="title"><a href="{Permalink}">{Title}</a></h1>
                 <hr class="separator">
                 <div class="post-description">
                 </div>
-            </div>{/block:Audio}
-            <!-- ./audio.post -->
+            </div>
+            <!-- ./audio.post -->{/block:Audio} {block:Video}
             <!-- video.post -->
-            {block:Video}
             <div class="row post">
-                <h2 id="title"><a href="{Permalink}">{Title}</a></h2>
+                <h1 id="title"><a href="{Permalink}">{Title}</a></h1>
                 <hr class="separator">
                 <div class="post-description">
                 </div>
-            </div>{/block:Video}
-            <!-- ./video.post -->
+            </div>
+            <!-- ./video.post -->{/block:Video} {block:Answer}
             <!-- answer.post -->
-            {block:Answer}
             <div class="row post">
-                <h2 id="title"><a href="{Permalink}">{Title}</a></h2>
+                <h1 id="title"><a href="{Permalink}">{Title}</a></h1>
                 <hr class="separator">
                 <div class="post-description">
                 </div>
-            </div> {/block:Answer}
-            <!-- ./answer.post -->
+            </div>
+            <!-- ./answer.post -->{/block:Answer}
+            <!-- ./post -->
             {/block:Posts}
-            <!-- ./posts -->
         </div>
     </div>
     <!-- jquery.js -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <!-- bootstrap.js -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-</body>
+    </body>
 
 </html>
