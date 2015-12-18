@@ -14,8 +14,12 @@
     <meta name="color:Post Title Color" content="#00B8F4">
     <meta name="color:Header Background Color" content="#ECEDEE">
     <meta name="color:Text Color" content="#002830">
+    <meta name="select:Post Layout" content="col-md-10 col-md-offset-1" title="Wide" />
+    <meta name="select:Post Layout" content="col-md-8 col-md-offset-2" title="Narrow" />
+    <meta name="select:Post Layout" content="col-md-6 col-md-offset-3" title="REALLY Narrow" />
     <meta name="color:Post Background Color" content="#fff">
-    <meta name="image:Hero Image" content="http://">
+    <meta name="color:Link Color" content="#00B7F7">
+    <meta name="image:Hero Image" content="http://i.imgur.com/XpTDzUk.png">
     <style>
     body {
         font-size: 15px;
@@ -46,12 +50,12 @@
     a:hover,
     a:visited,
     a:focus {
-        color: #00B7F7;
+        color: {color:Link Color};
     }
     /* Header */
     
     .hero {
-        background-image: url(http://i.imgur.com/XpTDzUk.png);
+        background-image: url({image:Hero Image});
         background-color: #f00;
         background-position: center;
         background-size: cover;
@@ -83,6 +87,21 @@
         border: none;
         border-bottom: 2px solid #002830;
     }
+    .label {
+        color: {color:Text Color};
+        font-size: 16px;
+    }
+    ul.chat {
+        list-style: none;
+        margin-left: -2em;
+
+    }
+    .tumblr_audio_player {
+        display: block;
+        margin: 1em auto 0 auto;
+        
+    }
+
     </style>
 
 </head>
@@ -96,7 +115,7 @@
     </div>
     <!-- ./header -->
     <div class="container">
-        <div class="col-md-8 col-md-offset-2">
+        <div class="{select:Layout}">
             {block:Posts}
             <!-- post -->
             {block:Text}
@@ -191,9 +210,19 @@
                 <span class="post-author">
                         Publicado por: <a href="{PostAuthorURL}">{PostAuthorTitle}</a> <span class="pull-right">{block:Date}<a href="{PostURL}">{TimeAgo}</a>{/block:Date}</span>
                 </span>
-                <h1 id="title"><a href="{Permalink}">{Title}</a></h1>
+                {block:Title}
+                <h1 id="title"><a href="{Permalink}">{Title}</a></h1>{/block:Title}
                 <hr class="separator">
-                <div class="post-description">{block:HasTags}
+                <div class="post-description">
+                    <ul class="chat">
+                        {block:Lines}
+                        <li class="{Alt} user_{UserNumber}">
+                            {block:Label}
+                            <span class="label">{Label}</span> {/block:Label}{Line}
+                        </li>
+                        {/block:Lines}
+                    </ul>
+                    {block:Source}{Source}{/block:Source}{block:HasTags}
                     <p>{block:Tags}<a href="{TagURL}">#{Tag}</a>&nbsp;{/block:Tags}</p>{/block:HasTags}
                 </div>
             </div>
@@ -204,9 +233,11 @@
                 <span class="post-author">
                         Publicado por: <a href="{PostAuthorURL}">{PostAuthorTitle}</a> <span class="pull-right">{block:Date}<a href="{PostURL}">{TimeAgo}</a>{/block:Date}</span>
                 </span>
-                <h1 id="title"><a href="{Permalink}">{Title}</a></h1>
+                <br>
+                {block:AudioEmbed}{AudioEmbed-500}{/block:AudioEmbed}
                 <hr class="separator">
-                <div class="post-description">{block:HasTags}
+                <div class="post-description">
+                    {block:Caption}{Caption}{/block:Caption}{block:HasTags}
                     <p>{block:Tags}<a href="{TagURL}">#{Tag}</a>&nbsp;{/block:Tags}</p>{/block:HasTags}
                 </div>
             </div>
@@ -217,9 +248,9 @@
                 <span class="post-author">
                         Publicado por: <a href="{PostAuthorURL}">{PostAuthorTitle}</a> <span class="pull-right">{block:Date}<a href="{PostURL}">{TimeAgo}</a>{/block:Date}</span>
                 </span>
-                <h1 id="title"><a href="{Permalink}">{Title}</a></h1>
-                <hr class="separator">
-                <div class="post-description">{block:HasTags}
+                <div class="post-description">
+                    {Quote}
+                    <hr class="separator">{block:HasTags}
                     <p>{block:Tags}<a href="{TagURL}">#{Tag}</a>&nbsp;{/block:Tags}</p>{/block:HasTags}
                 </div>
             </div>
