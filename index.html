@@ -20,6 +20,11 @@
     <meta name="color:Post Background Color" content="#fff">
     <meta name="color:Link Color" content="#00B7F7">
     <meta name="image:Hero Image" content="http://i.imgur.com/XpTDzUk.png">
+    <meta name="image:Footer Logo" content="http://i.imgur.com/t0IoNyN.png">
+    <meta name="text:Facebook" content="devacademyla">
+    <meta name="text:Twitter" content="devacademyla">
+    <meta name="text:YouTube" content="devacademyla">
+    <meta name="text:Skype" content="devacademyla">
     <style>
     body {
         font-size: 15px;
@@ -77,7 +82,7 @@
         border-radius: 0.25em;
         padding: 1em;
         margin: 1em 0 1em 0;
-    }
+    }   
 
     .post-author {
         display: inline;
@@ -96,12 +101,89 @@
         margin-left: -2em;
 
     }
-    .tumblr_audio_player {
+    
+    .tumblr_audio_player, .post-video {
         display: block;
         margin: 1em auto 0 auto;
         
     }
+    .post-photo {
+        text-align: center;
+    }
+    /* Footer */
+    footer {
+        border: 2px solid #00B7F7;
+        margin: 20px auto;
+        overflow: hidden;
+        max-width: 1024px;
+    }
 
+    
+    footer .left {
+        padding: 20px;
+        border-right: 2px solid #00B7F7;
+        float: left;
+        margin-right: 20px;
+    }
+    
+    footer .middle {
+        float: left;
+        padding: 35px 0;
+        text-align: center;
+    }
+
+    footer .middle a {
+        margin: 0 8px;
+        font-size: 15px;
+        line-height: 1.6em;
+        font-weight: bold;
+        text-decoration: none;
+    }
+    
+    footer .right {
+        float: right;
+        border-left: 2px solid #00B7F7;
+        margin-left: 20px;
+        height: 95px;
+        padding: 20px;
+    }
+    
+    footer .logo-footer {
+        background-image: url({image:Footer Logo});
+        background-repeat: no-repeat;
+        background-size: contain;
+        width: 110px;
+        height: 50px;
+        display: inline-block;
+    }
+    
+    footer .middle {
+        text-align: center;
+    }
+    footer .icon {
+        width: 44px;
+        height: 44px;
+        margin: 6px;
+        display: inline-block;
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+    
+    footer .icon.icon-facebook {
+        background-image: url(http://i.imgur.com/kHKAonv.png);
+    }
+    
+    footer .icon.icon-twitter {
+        background-image: url(http://i.imgur.com/A8c5Fnx.png);
+    }
+
+    footer .icon.icon-youtube {
+        background-image: url(http://i.imgur.com/6SREf2h.png);
+    }
+
+    footer .icon.icon-skype {
+        background-image: url(http://i.imgur.com/343K3yx.png);
+    }
     </style>
 
 </head>
@@ -115,7 +197,7 @@
     </div>
     <!-- ./header -->
     <div class="container">
-        <div class="{select:Layout}">
+        <div class="{select:Post Layout}">
             {block:Posts}
             <!-- post -->
             {block:Text}
@@ -140,7 +222,10 @@
                 <span class="post-author">
                         Publicado por: <a href="{PostAuthorURL}">{PostAuthorTitle}</a> <span class="pull-right">{block:Date}<a href="{PostURL}">{TimeAgo}</a>{/block:Date}</span>
                 </span>
-                <img src="{PhotoURL-500}" alt="{PhotoAlt}" />
+                <br>
+                <div class="post-photo">
+                    <img src="{PhotoURL-500}" alt="{PhotoAlt}" />
+                </div>
                 <hr class="separator"> {block:Caption}
                 <div class="post-description">
                     {Caption}{block:HasTags}
@@ -233,8 +318,7 @@
                 <span class="post-author">
                         Publicado por: <a href="{PostAuthorURL}">{PostAuthorTitle}</a> <span class="pull-right">{block:Date}<a href="{PostURL}">{TimeAgo}</a>{/block:Date}</span>
                 </span>
-                <br>
-                {block:AudioEmbed}{AudioEmbed-500}{/block:AudioEmbed}
+                <br> {block:AudioEmbed}{AudioEmbed-500}{/block:AudioEmbed}
                 <hr class="separator">
                 <div class="post-description">
                     {block:Caption}{Caption}{/block:Caption}{block:HasTags}
@@ -248,9 +332,9 @@
                 <span class="post-author">
                         Publicado por: <a href="{PostAuthorURL}">{PostAuthorTitle}</a> <span class="pull-right">{block:Date}<a href="{PostURL}">{TimeAgo}</a>{/block:Date}</span>
                 </span>
+                <div class="post-video">{VideoEmbed-500}</div>
                 <div class="post-description">
-                    {Quote}
-                    <hr class="separator">{block:HasTags}
+                    <hr class="separator"> {block:Caption}{Caption}{/block:Caption}{block:HasTags}
                     <p>{block:Tags}<a href="{TagURL}">#{Tag}</a>&nbsp;{/block:Tags}</p>{/block:HasTags}
                 </div>
             </div>
@@ -269,7 +353,34 @@
             </div>
             <!-- ./answer.post -->{/block:Answer}
             <!-- ./post -->
-            {/block:Posts}
+            {/block:Posts} {block:Pagination}
+            <nav>
+                <ul class="pager">
+                    {block:PreviousPage}
+                    <li class="previous"><a href="{PreviousPage}"><span aria-hidden="true">&larr;</span> Adelante</a></li>
+                    {/block:PreviousPage} {block:NextPage}
+                    <li class="next"><a href="{NextPage}">Atrás <span aria-hidden="true">&rarr;</span></a></li>
+                    {/block:NextPage}
+                </ul>
+            </nav>
+            {/block:Pagination}
+            <footer>
+                <div class="left">
+                    <div class="logo-footer"></div>
+                </div>
+                <div class="middle">
+                    <div class="menu">
+                        {block:HasPages} {block:Pages}
+                        <a class="link" href="{URL}">{Label}</a>{/block:Pages} {/block:HasPages}
+                    </div>
+                </div>
+                <div class="right">
+                    <a class="icon icon-facebook" href="https://www.facebook.com/{text:Facebook}" target="_blank"></a>
+                    <a class="icon icon-twitter" href="https://www.twitter.com/{text:Twitter}" target="_blank"></a>
+                    <a class="icon icon-youtube" href="https://www.youtube.com/{text:YouTube}" target="_blank"></a>
+                    <a class="icon icon-skype" href="skype:@{text:Skype}?call"></a>
+                </div>
+            </footer>
         </div>
     </div>
     <!-- jquery.js -->
