@@ -25,6 +25,8 @@
     <meta name="text:Twitter" content="devacademyla">
     <meta name="text:YouTube" content="devacademyla">
     <meta name="text:Skype" content="devacademyla">
+    <meta name="text:Blog Header" content="devAcademy">
+    <meta name="text:Blog Description" content="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non illo in at molestias rerum tempora, pariatur aperiam veritatis nulla eveniet!">
     <style>
     body {
         font-size: 15px;
@@ -64,7 +66,7 @@
         background-color: #f00;
         background-position: center;
         background-size: cover;
-        min-height: 20em;
+        min-height: 30em;
         position: relative;
     }
     
@@ -90,7 +92,7 @@
 
     .separator {
         border: none;
-        border-bottom: 2px solid #002830;
+        border-bottom: 2px solid #f00;
     }
     .label {
         color: {color:Text Color};
@@ -184,15 +186,50 @@
     footer .icon.icon-skype {
         background-image: url(http://i.imgur.com/343K3yx.png);
     }
-    </style>
 
+    .post-tag {
+        padding: 0.5em;
+        background: {color:Post Title Color};
+        color: {color:Post Background Color};
+        border-radius: 0.25em;
+    }
+
+    .post-tag:hover {
+        color: {color:Post Background Color};
+    }
+
+    .blog-navbar {
+        min-height: 5em;
+        padding: 1.25em;
+    }
+    .blog-logo {
+        background-repeat: no-repeat;
+        background-size: contain;
+        width: 249px;
+        height: 40px;
+        float: left;
+    }
+
+    </style>
 </head>
 
 <body>
     <!-- header -->
+    <div class="blog-navbar">
+        <div class="container"><img src="http://i.imgur.com/MihVZCf.png" alt="" class="blog-logo"></div>
+    </div>
     <div class="hero">
         <div class="container">
-            <a href="{BlogURL}"><img src="http://i.imgur.com/BFbxwo5.png" alt="devAcademy Logo" title="{text:Logo Alt Text}" class="logo"></a>
+            <div class="row">
+                <div class="col-md-4 blog-header">
+                    <h1>{text:Blog Header}</h1></div>
+            </div>
+            <div class="row">
+                <div class="col-md-4 blog-description">
+                    <hr>
+                    <p>{text:Blog Description}</p>
+                </div>
+            </div>
         </div>
     </div>
     <!-- ./header -->
@@ -212,7 +249,7 @@
                 <hr class="separator"> {/block:Title}
                 <div class="post-description">
                     {Body} {block:HasTags}
-                    <p>{block:Tags}<a href="{TagURL}">#{Tag}</a>&nbsp;{/block:Tags}</p>{/block:HasTags}
+                    <p>{block:Tags}<a href="{TagURL}" class="post-tag">#{Tag}</a>&nbsp;{/block:Tags}</p>{/block:HasTags}
                 </div>
             </div>
             <!-- ./text.post -->{/block:Text} {block:Photo}
@@ -229,7 +266,7 @@
                 <hr class="separator"> {block:Caption}
                 <div class="post-description">
                     {Caption}{block:HasTags}
-                    <p>{block:Tags}<a href="{TagURL}">#{Tag}</a>&nbsp;{/block:Tags}</p>{/block:HasTags}
+                    <p>{block:Tags}<a href="{TagURL}" class="post-tag">#{Tag}</a>&nbsp;{/block:Tags}</p>{/block:HasTags}
                 </div>
                 {/block:Caption}
             </div>
@@ -240,7 +277,7 @@
                 <hr class="separator">
                 <div class="post-description">
                     {block:Caption} {Caption} {/block:Caption}{block:HasTags}
-                    <p>{block:Tags}<a href="{TagURL}">#{Tag}</a>&nbsp;{/block:Tags}</p>{/block:HasTags}
+                    <p>{block:Tags}<a href="{TagURL}" class="post-tag">#{Tag}</a>&nbsp;{/block:Tags}</p>{/block:HasTags}
                 </div>
             </div>
             <!-- ./panorama.post -->{/block:Panorama} {block:Photoset}
@@ -254,7 +291,7 @@
                 <hr class="separator">
                 <div class="post-description">
                     {block:Caption} {Caption} {/block:Caption}{block:HasTags}
-                    <p>{block:Tags}<a href="{TagURL}">#{Tag}</a>&nbsp;{/block:Tags}</p>{/block:HasTags}
+                    <p>{block:Tags}<a href="{TagURL}" class="post-tag">#{Tag}</a>&nbsp;{/block:Tags}</p>{/block:HasTags}
                 </div>
             </div>
             <!-- ./photoset.post -->{/block:Photoset} {block:Quote}
@@ -270,7 +307,7 @@
                 {block:Source}{Source}{/block:Source}
                 <hr class="separator">
                 <div class="post-description">{block:HasTags}
-                    <p>{block:Tags}<a href="{TagURL}">#{Tag}</a>&nbsp;{/block:Tags}</p>{/block:HasTags}
+                    <p>{block:Tags}<a href="{TagURL}" class="post-tag">#{Tag}</a>&nbsp;{/block:Tags}</p>{/block:HasTags}
                 </div>
             </div>
             <!-- ./quote.post -->{/block:Quote} {block:Link}
@@ -285,7 +322,7 @@
                 <hr class="separator">
                 <div class="post-description">
                     {block:Description}{Description}{/block:Description}{block:HasTags}
-                    <p>{block:Tags}<a href="{TagURL}">#{Tag}</a>&nbsp;{/block:Tags}</p>{/block:HasTags}
+                    <p>{block:Tags}<a href="{TagURL}" class="post-tag">#{Tag}</a>&nbsp;{/block:Tags}</p>{/block:HasTags}
                 </div>
             </div>
             <!-- ./link.post -->{/block:Link} {block:Chat}
@@ -308,7 +345,7 @@
                         {/block:Lines}
                     </ul>
                     {block:Source}{Source}{/block:Source}{block:HasTags}
-                    <p>{block:Tags}<a href="{TagURL}">#{Tag}</a>&nbsp;{/block:Tags}</p>{/block:HasTags}
+                    <p>{block:Tags}<a href="{TagURL}" class="post-tag">#{Tag}</a>&nbsp;{/block:Tags}</p>{/block:HasTags}
                 </div>
             </div>
             <!-- ./chat.post -->{/block:Chat} {block:Audio}
@@ -322,7 +359,7 @@
                 <hr class="separator">
                 <div class="post-description">
                     {block:Caption}{Caption}{/block:Caption}{block:HasTags}
-                    <p>{block:Tags}<a href="{TagURL}">#{Tag}</a>&nbsp;{/block:Tags}</p>{/block:HasTags}
+                    <p>{block:Tags}<a href="{TagURL}" class="post-tag">#{Tag}</a>&nbsp;{/block:Tags}</p>{/block:HasTags}
                 </div>
             </div>
             <!-- ./audio.post -->{/block:Audio} {block:Video}
@@ -335,7 +372,7 @@
                 <div class="post-video">{VideoEmbed-500}</div>
                 <div class="post-description">
                     <hr class="separator"> {block:Caption}{Caption}{/block:Caption}{block:HasTags}
-                    <p>{block:Tags}<a href="{TagURL}">#{Tag}</a>&nbsp;{/block:Tags}</p>{/block:HasTags}
+                    <p>{block:Tags}<a href="{TagURL}" class="post-tag">#{Tag}</a>&nbsp;{/block:Tags}</p>{/block:HasTags}
                 </div>
             </div>
             <!-- ./video.post -->{/block:Video} {block:Answer}
@@ -348,7 +385,7 @@
                 <h1 id="title"><a href="{Permalink}">{Title}</a></h1>
                 <hr class="separator">
                 <div class="post-description">{block:HasTags}
-                    <p>{block:Tags}<a href="{TagURL}">#{Tag}</a>&nbsp;{/block:Tags}</p>{/block:HasTags}
+                    <p>{block:Tags}<a href="{TagURL}" class="post-tag">#{Tag}</a>&nbsp;{/block:Tags}</p>{/block:HasTags}
                 </div>
             </div>
             <!-- ./answer.post -->{/block:Answer}
