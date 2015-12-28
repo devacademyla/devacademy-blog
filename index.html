@@ -62,7 +62,8 @@
     /* Header */
     
     .hero {
-        background-image: url({HeaderImage});
+        /*background-image: url({HeaderImage});*/
+        background-image: url(http://i.imgur.com/XpTDzUk.png);
         background-color: #f00;
         background-position: center;
         background-size: cover;
@@ -94,6 +95,13 @@
         border: none;
         border-bottom: 2px solid #f00;
     }
+
+    .separator-blue {
+        border: none;
+        border-bottom: 2px solid #00B7F7;
+    }
+
+
     .label {
         color: {color:Text Color};
         font-size: 16px;
@@ -201,13 +209,31 @@
     .blog-navbar {
         min-height: 5em;
         padding: 1.25em;
+        background: #fff;
     }
+
     .blog-logo {
         background-repeat: no-repeat;
         background-size: contain;
         width: 249px;
         height: 40px;
         float: left;
+    }
+    
+    .hero > .container {
+        padding: 1.8em 0;
+    }
+    
+    .blog-header > h1 {
+        line-height: 55px;
+        font-size: 50px;
+        color: #fff;
+        font-weight: bold;
+    }
+    .blog-description > p {
+        font-size: 15px;
+        line-height: 1.6em;
+        color: #fff;
     }
 
     </style>
@@ -221,12 +247,12 @@
     <div class="hero">
         <div class="container">
             <div class="row">
-                <div class="col-md-4 blog-header">
+                <div class="col-md-5 blog-header">
                     <h1>{text:Blog Header}</h1></div>
             </div>
             <div class="row">
-                <div class="col-md-4 blog-description">
-                    <hr>
+                <div class="col-md-5 blog-description">
+                    <hr class="separator-blue">
                     <p>{text:Blog Description}</p>
                 </div>
             </div>
