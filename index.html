@@ -37,6 +37,7 @@
     
     * {
         font-family: 'Work Sans', sans-serif !important;
+        transition: all 1s ease;
     }
     
     #title {
@@ -208,7 +209,6 @@
 
     .blog-navbar {
         min-height: 5em;
-        padding: 1.25em;
         background: #fff;
     }
 
@@ -236,13 +236,71 @@
         color: #fff;
     }
 
+    .navbar-default {
+        min-height: 60px;
+        border: none !important;
+        background: inherit !important;
+        text-decoration: none;
+    }
+
+    .navbar>.container-fluid .navbar-brand {
+        margin-left: -40px;
+    }
+
+    .nav-link {
+        padding: 15px;
+        margin: 0 6px;
+        border-bottom: 2px solid #fff;
+        font-size: 15px;
+        line-height: 1.6em;
+        font-weight: bold;
+        text-decoration: none;
+        transition: color 0.1s linear !important;
+    }
+    
+    .nav-link:hover {
+        text-decoration: none;
+        color: #00B7F7;
+        border-bottom: 2px solid #00B7F7;
+        transition: color 0.1s linear !important;
+    }
+    
+    .nav-menu {
+        float: right;
+        padding: 25px 0;
+    }
+
     </style>
+
 </head>
 
 <body>
     <!-- header -->
     <div class="blog-navbar">
-        <div class="container"><img src="http://i.imgur.com/MihVZCf.png" alt="" class="blog-logo"></div>
+        <div class="container">
+            <nav class="navbar navbar-default">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#dev-menu" aria-expanded="false">
+                            <span class="sr-only">Toggle navigation</span>Menú
+                        </button>
+                        <a class="navbar-brand" href="#">
+                            <img src="http://i.imgur.com/MihVZCf.png" alt="" class="blog-logo">
+                        </a>
+                    </div>
+                    <div class="collapse navbar-collapse" id="dev-menu">
+                        {block:HasPages}
+                        <ul class="nav navbar-nav navbar-right">
+                            {block:Pages}
+                            <li><a class="nav-link" href="{URL}">{Label}</a></li>{/block:Pages}
+                        </ul>
+                        {/block:HasPages}
+                    </div>
+                    <!-- /.navbar-collapse -->
+                </div>
+                <!-- /.container-fluid -->
+            </nav>
+        </div>
     </div>
     <div class="hero">
         <div class="container">
