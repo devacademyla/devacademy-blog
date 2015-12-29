@@ -166,7 +166,13 @@
     }
 
     .hero {
-        background-image: url({HeaderImage});
+          background: 
+            linear-gradient(
+              rgba(255, 0, 0, 0.75), 
+              rgba(255, 0, 0, 0.75)
+            ),
+            /* bottom, image */
+            url({HeaderImage});
         background-color: #f00;
         background-position: center;
         background-size: cover;
@@ -229,6 +235,7 @@
         margin: 20px auto;
         overflow: hidden;
         max-width: 1024px;
+        background: {color:Post Background Color};
     }
 
     
