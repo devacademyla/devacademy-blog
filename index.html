@@ -7,6 +7,18 @@
     <!-- Using Bootstrap as a framework -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
     <link href='https://fonts.googleapis.com/css?family=Work+Sans' rel='stylesheet' type='text/css'>
+    <link rel="shortcut icon" type="image/x-icon" href="{Favicon}">
+    <meta name="text:Facebook" content="devacademyla">
+    <meta name="text:Twitter" content="devacademyla">
+    <meta name="text:YouTube" content="devacademyla">
+    <meta name="text:Skype" content="devacademyla">
+    <meta name="text:Hero Header" content="En devAcademy creamos lo que creemos.">
+    <meta name="text:Hero Description" content="Nos apasiona materializar los sueños de emprendedores como nosotros, y creemos que la democratización del acceso a las nuevas tecnologías es una oportunidad más de promover el desarrollo equitativo de nuestra sociedad.">
+    <meta name="text:Sidebar Tag 1" content="Ruby">
+    <meta name="text:Sidebar Tag 2" content="Ruby on Rails">
+    <meta name="text:Sidebar Tag 3" content="Web">
+    <meta name="text:Sidebar Tag 4" content="Software">
+    <meta name="text:Sidebar Tag 5" content="News">
     <style>
     /* ======================================================
                         GLOBAL STYLE SECTION
@@ -59,6 +71,11 @@
         padding-bottom: 0;
     }
     
+    .nav>li>a:hover {
+        text-decoration: none;
+        background-color: transparent;
+    }
+    
     .nav-link {
         color: #00B7F7;
         padding: 10px;
@@ -85,6 +102,7 @@
     
     .hero-header {
         color: #fff;
+        margin-top: 1em;
         border-bottom: 2px solid #00B7F7;
         padding-bottom: 20px;
         margin-bottom: 10px;
@@ -92,6 +110,23 @@
     }
     
     .hero-text {
+        color: #fff;
+    }
+    
+    .btn-hero {
+        border: 2px solid #fff;
+        color: #fff !important;
+        border-radius: 30px;
+        font-size: 0.85em;
+        font-weight: bold;
+        padding: 10px 15px;
+        text-transform: uppercase;
+        background-color: transparent;
+        -webkit-appearance: none;
+    }
+    
+    .btn-hero:hover {
+        background-color: #f00 !important;
         color: #fff;
     }
     /* ======================================================
@@ -146,13 +181,13 @@
     
     .form-search {
         border: 2px solid #00B7F7;
-        color: #f00;
+        color: inherit;
         border-radius: 30px;
         font-size: 0.85em;
         font-weight: bold;
         padding: 10px 15px;
         margin-right: 0px;
-        text-transform: uppercase;
+        text-transform: none;
         background-color: transparent;
         -webkit-appearance: none;
     }
@@ -267,7 +302,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#"><img src="http://i.imgur.com/MihVZCf.png" alt="devAcademy Logo" class="nav-logo"></a>
+                <a class="navbar-brand" href="{BlogURL}"><img src="http://i.imgur.com/MihVZCf.png" alt="devAcademy Logo" class="nav-logo"></a>
             </div>
             <div id="navbar" class="collapse navbar-collapse">
                 <ul class="nav navbar-nav navbar-right">
@@ -282,8 +317,9 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-6">
-                    <h1 class="hero-header">Creemos en comunidad</h1>
-                    <p class="hero-text">Queremos ser parte del crecimiento sostenido de la comunidad de desarrolladores en el Perú y el mundo, por eso creamos devHangout. Una serie de streamings sobre tecnología y desarrollo de software, gratuitos y con invitados nacionales e internacionales que busca mantenernos en constante exploración y actualización. ¡No te pierdas el próximo!</p>
+                    <h1 class="hero-header">{text:Hero Header}</h1>
+                    <p class="hero-text">{text:Hero Description}</p>
+                    <a href="http://devacademy.la" class="btn btn-hero">CONOCENOS MEJOR</a>
                 </div>
             </div>
         </div>
@@ -453,16 +489,26 @@
                     <div class="row">
                         <form action="/search" method="get">
                             <div class="col-md-8 search-input">
-                                <input type="text" name="q" value="{SearchQuery}" class="form-search form-control" placeholder="Busca">
+                                <input type="text" name="q" value="{SearchQuery}" class="form-search form-control" placeholder="BUSCA">
                             </div>
                             <div class="col-md-4">
                                 <button type="submit" value="Search" class="btn btn-search form-control">Buscar</button>
                             </div>
                         </form>
                     </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-12">popular tags</div>
+                    <hr>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h3>Temas Populares:</h3>
+                            <ul class="list-group">
+                                <li class="list-group-item"><a href="{BlogURL}tagged/{text:Sidebar Tag 1}">{text:Sidebar Tag 1}</a></li>
+                                <li class="list-group-item"><a href="{BlogURL}tagged/{text:Sidebar Tag 2}">{text:Sidebar Tag 2}</a></li>
+                                <li class="list-group-item"><a href="{BlogURL}tagged/{text:Sidebar Tag 3}">{text:Sidebar Tag 3}</a></li>
+                                <li class="list-group-item"><a href="{BlogURL}tagged/{text:Sidebar Tag 4}">{text:Sidebar Tag 4}</a></li>
+                                <li class="list-group-item"><a href="{BlogURL}tagged/{text:Sidebar Tag 5}">{text:Sidebar Tag 5}</a></li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -471,7 +517,9 @@
     <section class="footer">
         <footer class="hidden-xs">
             <div class="left">
-                <div class="logo-footer"></div>
+                <a href="{BlogURL}">
+                    <div class="logo-footer"></div>
+                </a>
             </div>
             <div class="middle">
                 <div class="menu">
@@ -490,7 +538,9 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-12 text-center">
-                        <div class="logo-footer"></div>
+                        <a href="{BlogURL}">
+                            <div class="logo-footer"></div>
+                        </a>
                     </div>
                 </div>
                 <div class="row">
