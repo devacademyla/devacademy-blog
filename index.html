@@ -27,7 +27,7 @@
     a:visited,
     a:focus {
         color: #00B7F7;
-        transition: color 0.1s linear;
+        transition: color 0.1s linear !important;
     }
     
     .container {
@@ -137,6 +137,43 @@
         color: #fff;
     }
     /* ======================================================
+                        SIDEBAR STYLE SECTION
+       ====================================================== */
+    
+    .search-input {
+        padding-right: 0em;
+    }
+    
+    .form-search {
+        border: 2px solid #00B7F7;
+        color: #f00;
+        border-radius: 30px;
+        font-size: 0.85em;
+        font-weight: bold;
+        padding: 10px 15px;
+        margin-right: 0px;
+        text-transform: uppercase;
+        background-color: transparent;
+        -webkit-appearance: none;
+    }
+    
+    .btn-search {
+        border: 2px solid #f00;
+        color: #f00;
+        border-radius: 30px;
+        font-size: 0.85em;
+        font-weight: bold;
+        padding: auto 15px;
+        text-transform: uppercase;
+        background-color: transparent;
+        -webkit-appearance: none;
+    }
+    
+    .btn-search:hover {
+        background-color: #f00 !important;
+        color: #fff;
+    }
+    /* ======================================================
                         FOOTER STYLE SECTION
        ====================================================== */
     
@@ -213,11 +250,10 @@
     footer .icon.icon-skype {
         background-image: url(http://i.imgur.com/343K3yx.png);
     }
-
+    
     .mobile {
         margin: 1em;
     }
-
     </style>
 </head>
 
@@ -415,13 +451,21 @@
                     {/block:Posts} </div>
                 <div class="col-md-4">
                     <div class="row">
-                        <div class="col-md-12">search bar</div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-12">popular tags</div>
+                        <form action="/search" method="get">
+                            <div class="col-md-8 search-input">
+                                <input type="text" name="q" value="{SearchQuery}" class="form-search form-control" placeholder="Busca">
+                            </div>
+                            <div class="col-md-4">
+                                <button type="submit" value="Search" class="btn btn-search form-control">Buscar</button>
+                            </div>
+                        </form>
                     </div>
                 </div>
+                <div class="row">
+                    <div class="col-md-12">popular tags</div>
+                </div>
             </div>
+        </div>
         </div>
     </section>
     <section class="footer">
