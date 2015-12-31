@@ -22,7 +22,11 @@
         transition: all 1s ease;
     }
     
-    a {
+    a,
+    a:hover,
+    a:visited,
+    a:focus {
+        color: #00B7F7;
         transition: color 0.1s linear;
     }
     
@@ -97,10 +101,40 @@
     .post {
         margin-bottom: 1em;
     }
-
+    
+    .tumblr_audio_player,
+    .post-video {
+        display: block;
+        margin: 1em auto 0 auto;
+    }
+    
+    .label {
+        color: #f00;
+        font-size: 16px;
+    }
+    
+    ul.chat {
+        list-style: none;
+        margin-left: -2em;
+    }
+    
     .separator {
+        margin-top: 2em;
         border: none;
-        border-bottom: 2px solid #00B7F7;
+        border-bottom: 2px solid #f00;
+    }
+    
+    .post-tag {
+        padding: 0.5em;
+        background: #00B7F7;
+        color: #fff;
+        border-radius: 0.25em;
+    }
+    
+    .post-tag:hover,
+    .post-tag:focus,
+    .post-tag:visited {
+        color: #fff;
     }
     /* ======================================================
                         FOOTER STYLE SECTION
@@ -179,6 +213,11 @@
     footer .icon.icon-skype {
         background-image: url(http://i.imgur.com/343K3yx.png);
     }
+
+    .mobile {
+        margin: 1em;
+    }
+
     </style>
 </head>
 
@@ -196,7 +235,8 @@
             </div>
             <div id="navbar" class="collapse navbar-collapse">
                 <ul class="nav navbar-nav navbar-right">
-                    <li class="nav-link"><a href="#">About</a></li>
+                    {block:HasPages} {block:Pages}
+                    <li class="nav-link"><a href="{URL}">{Label}</a></li>{/block:Pages} {/block:HasPages}
                 </ul>
             </div>
             <!--/.nav-collapse -->
@@ -374,14 +414,18 @@
                     <!-- ./post -->
                     {/block:Posts} </div>
                 <div class="col-md-4">
-                    <div class="row">search bar here</div>
-                    <div class="row">popular tags here</div>
+                    <div class="row">
+                        <div class="col-md-12">search bar</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">popular tags</div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
     <section class="footer">
-        <footer>
+        <footer class="hidden-xs">
             <div class="left">
                 <div class="logo-footer"></div>
             </div>
@@ -396,6 +440,23 @@
                 <a class="icon icon-twitter" href="https://www.twitter.com/{text:Twitter}" target="_blank"></a>
                 <a class="icon icon-youtube" href="https://www.youtube.com/{text:YouTube}" target="_blank"></a>
                 <a class="icon icon-skype" href="skype:@{text:Skype}?call"></a>
+            </div>
+        </footer>
+        <footer class="visible-xs mobile">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 text-center">
+                        <div class="logo-footer"></div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12 text-center">
+                        <a class="icon icon-facebook" href="https://www.facebook.com/{text:Facebook}" target="_blank"></a>
+                        <a class="icon icon-twitter" href="https://www.twitter.com/{text:Twitter}" target="_blank"></a>
+                        <a class="icon icon-youtube" href="https://www.youtube.com/{text:YouTube}" target="_blank"></a>
+                        <a class="icon icon-skype" href="skype:@{text:Skype}?call"></a>
+                    </div>
+                </div>
             </div>
         </footer>
     </section>
