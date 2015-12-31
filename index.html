@@ -484,7 +484,17 @@
                     </div>
                     <!-- ./answer.post -->{/block:Answer}
                     <!-- ./post -->
-                    {/block:Posts} </div>
+                    {/block:Posts} {block:Pagination}
+                    <nav>
+                        <ul class="pager">
+                            {block:PreviousPage}
+                            <li class="previous"><a href="{PreviousPage}"><span aria-hidden="true">&larr;</span> Adelante</a></li>
+                            {/block:PreviousPage} {block:NextPage}
+                            <li class="next"><a href="{NextPage}">Atrás <span aria-hidden="true">&rarr;</span></a></li>
+                            {/block:NextPage}
+                        </ul>
+                    </nav>
+                    {/block:Pagination}</div>
                 <div class="col-md-4">
                     <div class="row">
                         <form action="/search" method="get">
