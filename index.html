@@ -4,35 +4,17 @@
 <head>
     <meta charset="UTF-8">
     <title>{Title}</title>
-    <!-- Bootstrap as a framework! -->
+    <!-- Using Bootstrap as a framework -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-    <!-- Loading Work Sans to fit to devAcademy standards -->
     <link href='https://fonts.googleapis.com/css?family=Work+Sans' rel='stylesheet' type='text/css'>
-    <link rel="shortcut icon" type="image/x-icon" href="{Favicon}">
-    <meta name="text:Logo Alt Text" content="devAcademy">
-    <meta name="color:Background Color" content="#fff">
-    <meta name="color:Post Title Color" content="#00B8F4">
-    <meta name="color:Header Background Color" content="#ECEDEE">
-    <meta name="color:Text Color" content="#002830">
-    <meta name="select:Post Layout" content="col-md-10 col-md-offset-1" title="Wide" />
-    <meta name="select:Post Layout" content="col-md-8 col-md-offset-2" title="Narrow" />
-    <meta name="select:Post Layout" content="col-md-6 col-md-offset-3" title="REALLY Narrow" />
-    <meta name="color:Post Background Color" content="#fff">
-    <meta name="color:Link Color" content="#00B7F7">
-    <!--<meta name="image:Hero Image" content="http://i.imgur.com/XpTDzUk.png">-->
-    <meta name="image:Footer Logo" content="http://i.imgur.com/t0IoNyN.png">
-    <meta name="text:Facebook" content="devacademyla">
-    <meta name="text:Twitter" content="devacademyla">
-    <meta name="text:YouTube" content="devacademyla">
-    <meta name="text:Skype" content="devacademyla">
-    <meta name="text:Blog Header" content="devAcademy">
-    <meta name="text:Blog Description" content="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non illo in at molestias rerum tempora, pariatur aperiam veritatis nulla eveniet!">
     <style>
+    /* ======================================================
+                        GLOBAL STYLE SECTION
+       ====================================================== */
+    
     body {
         font-size: 15px;
         line-height: 1.6em;
-        color: {color:Text Color};
-        background: {color:Background Color};
     }
     
     * {
@@ -40,204 +22,96 @@
         transition: all 1s ease;
     }
     
-    #title {
-        color: {color:Post Title Color};
+    a {
+        transition: color 0.1s linear;
     }
     
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-        font-weight: bold;
-        text-align: left;
+    .container {
+        max-width: 1064px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+    /* ======================================================
+                        NAVBAR STYLE SECTION
+       ====================================================== */
+    
+    .navbar {
+        height: 80px;
+        padding: 20px 0;
+        margin-bottom: 0px;
     }
     
-    a,
-    a:hover,
-    a:visited,
-    a:focus {
-        color: {color:Link Color};
+    .navbar-brand {
+        padding: 0;
     }
-    /* Header */
-    .blog-navbar {
-        min-height: 5em;
-        background: #fff;
-    }
-
-    .blog-logo {
-        background-repeat: no-repeat;
-        background-size: contain;
+    
+    .nav-logo {
         width: 249px;
         height: 40px;
-        float: left;
     }
     
-    .hero > .container {
-        padding: 1.8em 0;
+    .navbar-nav>li>a {
+        padding-top: 0;
+        padding-bottom: 0;
     }
     
-    .blog-header > h1 {
-        line-height: 55px;
-        font-size: 50px;
-        color: #fff;
-        font-weight: bold;
-    }
-    .blog-description > p {
-        font-size: 15px;
-        line-height: 1.6em;
-        color: #fff;
-    }
-
-    .navbar-default {
-        min-height: 60px;
-        border: none !important;
-        background: inherit !important;
-        text-decoration: none;
-    }
-
-    .navbar>.container-fluid .navbar-brand {
-        margin-left: -40px;
-    }
-
     .nav-link {
-        padding: 15px;
-        padding-top: 25px;
+        color: #00B7F7;
+        padding: 10px;
         margin: 0 6px;
         border-bottom: 2px solid #fff;
-        font-size: 15px;
-        line-height: 1.6em;
-        font-weight: bold;
-        color: #00B7F7 !important;
-        text-decoration: none;
-        transition: color 0.1s linear !important;
     }
     
     .nav-link:hover {
-        text-decoration: none;
-        color: #00B7F7 !important;
+        color: #00B7F7;
         border-bottom: 2px solid #00B7F7;
-        transition: color 0.1s linear !important;
     }
+    /* ======================================================
+                         HERO STYLE SECTION
+       ====================================================== */
     
-    .nav-menu {
-        float: right;
-        padding: 25px 0;
-    }
-
-    .navbar-nav>li>a {
-        padding-bottom: 10px;
-        padding-top: 18px;
-    }
-    
-    .navbar-default .navbar-collapse, .navbar-default .navbar-form {
-        border-color: #fff !important;
-    }
-    .nav {
-        padding-top: 7px;
-    }
-
-    .navbar-toggle {
-        margin-top: 15px;
-        margin-right: 15px;
-        margin-bottom: 0px;
-    }
-
-    .navbar-brand {
-        padding: 15px 20px;
-    }
-
-    button {
-        border: 2px solid #f00 !important;
-        color: #f00;
-        border-radius: 30px !important;
-        font-size: 0.85em;
-        font-weight: bold;
-        padding: 10px 15px;
-        text-transform: uppercase;
-        background-color: transparent;
-        -webkit-appearance: none;
-    }
-
-    button:hover, button:focus {
-        color: #fff;
-        background-color: #f00 !important
-    }
-
     .hero {
-          background: 
-            linear-gradient(
-              rgba(255, 0, 0, 0.75), 
-              rgba(255, 0, 0, 0.75)
-            ),
-            /* bottom, image */
-            url({HeaderImage});
-        background-color: #f00;
+        background: linear-gradient( rgba(255, 0, 0, 0.5), rgba(255, 0, 0, 0.5)),
+        url({HeaderImage});
         background-position: center;
         background-size: cover;
-        min-height: 30em;
-        position: relative;
+        min-height: 480px;
+        margin-bottom: 50px;
     }
     
-    .logo {
-        width: auto;
-        height: 40px;
-        position: absolute;
-        bottom: 0px;
-        margin: 20px;
+    .hero-header {
+        color: #fff;
+        border-bottom: 2px solid #00B7F7;
+        padding-bottom: 20px;
+        margin-bottom: 10px;
+        font-size: 50px;
     }
-    /* Global post configuration */
+    
+    .hero-text {
+        color: #fff;
+    }
+    /* ======================================================
+                          POST STYLE SECTION
+       ====================================================== */
     
     .post {
-        background: {color:Post Background Color};
-        border-radius: 0.25em;
-        padding: 1em;
-        margin: 1em 0 1em 0;
-    }   
-
-    .post-author {
-        display: inline;
+        margin-bottom: 1em;
     }
 
     .separator {
         border: none;
-        border-bottom: 2px solid #f00;
-    }
-
-    .separator-blue {
-        border: none;
         border-bottom: 2px solid #00B7F7;
     }
-
-
-    .label {
-        color: {color:Text Color};
-        font-size: 16px;
-    }
-    ul.chat {
-        list-style: none;
-        margin-left: -2em;
-
-    }
+    /* ======================================================
+                        FOOTER STYLE SECTION
+       ====================================================== */
     
-    .tumblr_audio_player, .post-video {
-        display: block;
-        margin: 1em auto 0 auto;
-        
-    }
-    .post-photo {
-        text-align: center;
-    }
-    /* Footer */
     footer {
         border: 2px solid #00B7F7;
         margin: 20px auto;
         overflow: hidden;
         max-width: 1024px;
-        background: {color:Post Background Color};
     }
-
     
     footer .left {
         padding: 20px;
@@ -251,7 +125,7 @@
         padding: 35px 0;
         text-align: center;
     }
-
+    
     footer .middle a {
         margin: 0 8px;
         font-size: 15px;
@@ -269,7 +143,7 @@
     }
     
     footer .logo-footer {
-        background-image: url({image:Footer Logo});
+        background-image: url(http://i.imgur.com/t0IoNyN.png);
         background-repeat: no-repeat;
         background-size: contain;
         width: 110px;
@@ -280,6 +154,7 @@
     footer .middle {
         text-align: center;
     }
+    
     footer .icon {
         width: 44px;
         height: 44px;
@@ -296,264 +171,236 @@
     footer .icon.icon-twitter {
         background-image: url(http://i.imgur.com/A8c5Fnx.png);
     }
-
+    
     footer .icon.icon-youtube {
         background-image: url(http://i.imgur.com/6SREf2h.png);
     }
-
+    
     footer .icon.icon-skype {
         background-image: url(http://i.imgur.com/343K3yx.png);
     }
-
-    .post-tag {
-        padding: 0.5em;
-        background: {color:Post Title Color};
-        color: {color:Post Background Color};
-        border-radius: 0.25em;
-    }
-
-    .post-tag:hover, .post-tag:focus, .post-tag:visited {
-        color: {color:Post Background Color};
-    }
-
     </style>
-
 </head>
 
 <body>
-    <!-- header -->
-    <div class="blog-navbar">
+    <nav class="navbar">
         <div class="container">
-            <nav class="navbar navbar-default">
-                <div class="container-fluid">
-                    <div class="navbar-header">
-                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#dev-menu" aria-expanded="false">
-                            <span class="sr-only">Toggle navigation</span>Menú
-                        </button>
-                        <a class="navbar-brand" href="#">
-                            <img src="http://i.imgur.com/MihVZCf.png" alt="" class="blog-logo">
-                        </a>
-                    </div>
-                    <div class="collapse navbar-collapse" id="dev-menu">
-                        {block:HasPages}
-                        <ul class="nav navbar-nav navbar-right">
-                            {block:Pages}
-                            <li><a class="nav-link" href="{URL}">{Label}</a></li>{/block:Pages}
-                        </ul>
-                        {/block:HasPages}
-                    </div>
-                    <!-- /.navbar-collapse -->
-                </div>
-                <!-- /.container-fluid -->
-            </nav>
-        </div>
-    </div>
-    <div class="hero">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-5 blog-header">
-                    <h1>{text:Blog Header}</h1></div>
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#"><img src="http://i.imgur.com/MihVZCf.png" alt="devAcademy Logo" class="nav-logo"></a>
             </div>
-            <div class="row">
-                <div class="col-md-5 blog-description">
-                    <hr class="separator-blue">
-                    <p>{text:Blog Description}</p>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- ./header -->
-    <div class="container">
-        <div class="{select:Post Layout}">
-            {block:Posts}
-            <!-- post -->
-            {block:Text}
-            <!-- text.post -->
-            <div class="row post">
-                <img src="{PostAuthorPortraitURL-40}" alt="{PostAuthorTitle}" class="img-circle" />
-                <span class="post-author">
-                        Publicado por: <a href="{PostAuthorURL}">{PostAuthorTitle}</a> <span class="pull-right">{block:Date}<a href="{PostURL}">{TimeAgo}</a>{/block:Date}</span>
-                </span>
-                {block:Title}
-                <h1 id="title"><a href="{Permalink}">{Title}</a></h1>
-                <hr class="separator"> {/block:Title}
-                <div class="post-description">
-                    {Body} {block:HasTags}
-                    <p>{block:Tags}<a href="{TagURL}" class="post-tag">#{Tag}</a>&nbsp;{/block:Tags}</p>{/block:HasTags}
-                </div>
-            </div>
-            <!-- ./text.post -->{/block:Text} {block:Photo}
-            <!-- photo.post -->
-            <div class="row post">
-                <img src="{PostAuthorPortraitURL-40}" alt="{PostAuthorTitle}" class="img-circle" />
-                <span class="post-author">
-                        Publicado por: <a href="{PostAuthorURL}">{PostAuthorTitle}</a> <span class="pull-right">{block:Date}<a href="{PostURL}">{TimeAgo}</a>{/block:Date}</span>
-                </span>
-                <br>
-                <div class="post-photo">
-                    <img src="{PhotoURL-500}" alt="{PhotoAlt}" />
-                </div>
-                <hr class="separator"> {block:Caption}
-                <div class="post-description">
-                    {Caption}{block:HasTags}
-                    <p>{block:Tags}<a href="{TagURL}" class="post-tag">#{Tag}</a>&nbsp;{/block:Tags}</p>{/block:HasTags}
-                </div>
-                {/block:Caption}
-            </div>
-            <!-- ./photo.post -->{/block:Photo} {block:Panorama}
-            <!-- panorama.post -->
-            <div class="row post">
-                <a href="{Permalink}">{LinkOpenTag}<img src="{PhotoURL-Panorama}" alt="{PhotoAlt}" />{LinkCloseTag}</a>
-                <hr class="separator">
-                <div class="post-description">
-                    {block:Caption} {Caption} {/block:Caption}{block:HasTags}
-                    <p>{block:Tags}<a href="{TagURL}" class="post-tag">#{Tag}</a>&nbsp;{/block:Tags}</p>{/block:HasTags}
-                </div>
-            </div>
-            <!-- ./panorama.post -->{/block:Panorama} {block:Photoset}
-            <!-- photoset.post -->
-            <div class="row post">
-                <img src="{PostAuthorPortraitURL-40}" alt="{PostAuthorTitle}" class="img-circle" />
-                <span class="post-author">
-                        Publicado por: <a href="{PostAuthorURL}">{PostAuthorTitle}</a> <span class="pull-right">{block:Date}<a href="{PostURL}">{TimeAgo}</a>{/block:Date}</span>
-                </span>
-                {Photoset-500}
-                <hr class="separator">
-                <div class="post-description">
-                    {block:Caption} {Caption} {/block:Caption}{block:HasTags}
-                    <p>{block:Tags}<a href="{TagURL}" class="post-tag">#{Tag}</a>&nbsp;{/block:Tags}</p>{/block:HasTags}
-                </div>
-            </div>
-            <!-- ./photoset.post -->{/block:Photoset} {block:Quote}
-            <!-- quote.post -->
-            <div class="row post">
-                <img src="{PostAuthorPortraitURL-40}" alt="{PostAuthorTitle}" class="img-circle" />
-                <span class="post-author">
-                        Publicado por: <a href="{PostAuthorURL}">{PostAuthorTitle}</a> <span class="pull-right">{block:Date}<a href="{PostURL}">{TimeAgo}</a>{/block:Date}</span>
-                </span>
-                <blockquote>
-                    <h1 id="title"><a href="{Permalink}">"{Quote}"</a></h1>
-                </blockquote>
-                {block:Source}{Source}{/block:Source}
-                <hr class="separator">
-                <div class="post-description">{block:HasTags}
-                    <p>{block:Tags}<a href="{TagURL}" class="post-tag">#{Tag}</a>&nbsp;{/block:Tags}</p>{/block:HasTags}
-                </div>
-            </div>
-            <!-- ./quote.post -->{/block:Quote} {block:Link}
-            <!-- link.post -->
-            <div class="row post">
-                <img src="{PostAuthorPortraitURL-40}" alt="{PostAuthorTitle}" class="img-circle" />
-                <span class="post-author">
-                        Publicado por: <a href="{PostAuthorURL}">{PostAuthorTitle}</a> <span class="pull-right">{block:Date}<a href="{PostURL}">{TimeAgo}</a>{/block:Date}</span>
-                </span>{block:Thumbnail} <img src="{Thumbnail}" alt="{Name}" class="img-responsive img-thumbnail"> {/block:Thumbnail}
-                <h1 id="title"><a {Target} href="{URL}">{Name}</a></h1> ({Host}) {block:Excerpt}
-                <blockquote>{Excerpt}</blockquote> {/block:Excerpt}
-                <hr class="separator">
-                <div class="post-description">
-                    {block:Description}{Description}{/block:Description}{block:HasTags}
-                    <p>{block:Tags}<a href="{TagURL}" class="post-tag">#{Tag}</a>&nbsp;{/block:Tags}</p>{/block:HasTags}
-                </div>
-            </div>
-            <!-- ./link.post -->{/block:Link} {block:Chat}
-            <!-- chat.post -->
-            <div class="row post">
-                <img src="{PostAuthorPortraitURL-40}" alt="{PostAuthorTitle}" class="img-circle" />
-                <span class="post-author">
-                        Publicado por: <a href="{PostAuthorURL}">{PostAuthorTitle}</a> <span class="pull-right">{block:Date}<a href="{PostURL}">{TimeAgo}</a>{/block:Date}</span>
-                </span>
-                {block:Title}
-                <h1 id="title"><a href="{Permalink}">{Title}</a></h1>{/block:Title}
-                <hr class="separator">
-                <div class="post-description">
-                    <ul class="chat">
-                        {block:Lines}
-                        <li class="{Alt} user_{UserNumber}">
-                            {block:Label}
-                            <span class="label">{Label}</span> {/block:Label}{Line}
-                        </li>
-                        {/block:Lines}
-                    </ul>
-                    {block:Source}{Source}{/block:Source}{block:HasTags}
-                    <p>{block:Tags}<a href="{TagURL}" class="post-tag">#{Tag}</a>&nbsp;{/block:Tags}</p>{/block:HasTags}
-                </div>
-            </div>
-            <!-- ./chat.post -->{/block:Chat} {block:Audio}
-            <!-- audio.post -->
-            <div class="row post">
-                <img src="{PostAuthorPortraitURL-40}" alt="{PostAuthorTitle}" class="img-circle" />
-                <span class="post-author">
-                        Publicado por: <a href="{PostAuthorURL}">{PostAuthorTitle}</a> <span class="pull-right">{block:Date}<a href="{PostURL}">{TimeAgo}</a>{/block:Date}</span>
-                </span>
-                <br> {block:AudioEmbed}{AudioEmbed-500}{/block:AudioEmbed}
-                <hr class="separator">
-                <div class="post-description">
-                    {block:Caption}{Caption}{/block:Caption}{block:HasTags}
-                    <p>{block:Tags}<a href="{TagURL}" class="post-tag">#{Tag}</a>&nbsp;{/block:Tags}</p>{/block:HasTags}
-                </div>
-            </div>
-            <!-- ./audio.post -->{/block:Audio} {block:Video}
-            <!-- video.post -->
-            <div class="row post">
-                <img src="{PostAuthorPortraitURL-40}" alt="{PostAuthorTitle}" class="img-circle" />
-                <span class="post-author">
-                        Publicado por: <a href="{PostAuthorURL}">{PostAuthorTitle}</a> <span class="pull-right">{block:Date}<a href="{PostURL}">{TimeAgo}</a>{/block:Date}</span>
-                </span>
-                <div class="post-video">{VideoEmbed-500}</div>
-                <div class="post-description">
-                    <hr class="separator"> {block:Caption}{Caption}{/block:Caption}{block:HasTags}
-                    <p>{block:Tags}<a href="{TagURL}" class="post-tag">#{Tag}</a>&nbsp;{/block:Tags}</p>{/block:HasTags}
-                </div>
-            </div>
-            <!-- ./video.post -->{/block:Video} {block:Answer}
-            <!-- answer.post -->
-            <div class="row post">
-                <img src="{PostAuthorPortraitURL-40}" alt="{PostAuthorTitle}" class="img-circle" />
-                <span class="post-author">
-                        Publicado por: <a href="{PostAuthorURL}">{PostAuthorTitle}</a> <span class="pull-right">{block:Date}<a href="{PostURL}">{TimeAgo}</a>{/block:Date}</span>
-                </span>
-                <h1 id="title"><a href="{Permalink}">{Title}</a></h1>
-                <hr class="separator">
-                <div class="post-description">{block:HasTags}
-                    <p>{block:Tags}<a href="{TagURL}" class="post-tag">#{Tag}</a>&nbsp;{/block:Tags}</p>{/block:HasTags}
-                </div>
-            </div>
-            <!-- ./answer.post -->{/block:Answer}
-            <!-- ./post -->
-            {/block:Posts} {block:Pagination}
-            <nav>
-                <ul class="pager">
-                    {block:PreviousPage}
-                    <li class="previous"><a href="{PreviousPage}"><span aria-hidden="true">&larr;</span> Adelante</a></li>
-                    {/block:PreviousPage} {block:NextPage}
-                    <li class="next"><a href="{NextPage}">Atrás <span aria-hidden="true">&rarr;</span></a></li>
-                    {/block:NextPage}
+            <div id="navbar" class="collapse navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="nav-link"><a href="#">About</a></li>
                 </ul>
-            </nav>
-            {/block:Pagination}
-            <footer>
-                <div class="left">
-                    <div class="logo-footer"></div>
-                </div>
-                <div class="middle">
-                    <div class="menu">
-                        {block:HasPages} {block:Pages}
-                        <a class="link" href="{URL}">{Label}</a>{/block:Pages} {/block:HasPages}
-                    </div>
-                </div>
-                <div class="right">
-                    <a class="icon icon-facebook" href="https://www.facebook.com/{text:Facebook}" target="_blank"></a>
-                    <a class="icon icon-twitter" href="https://www.twitter.com/{text:Twitter}" target="_blank"></a>
-                    <a class="icon icon-youtube" href="https://www.youtube.com/{text:YouTube}" target="_blank"></a>
-                    <a class="icon icon-skype" href="skype:@{text:Skype}?call"></a>
-                </div>
-            </footer>
+            </div>
+            <!--/.nav-collapse -->
         </div>
-    </div>
-    <!-- jquery.js -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <!-- bootstrap.js -->
+    </nav>
+    <section class="hero">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h1 class="hero-header">Creemos en comunidad</h1>
+                    <p class="hero-text">Queremos ser parte del crecimiento sostenido de la comunidad de desarrolladores en el Perú y el mundo, por eso creamos devHangout. Una serie de streamings sobre tecnología y desarrollo de software, gratuitos y con invitados nacionales e internacionales que busca mantenernos en constante exploración y actualización. ¡No te pierdas el próximo!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="posts">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8"> {block:Posts}
+                    <!-- post -->
+                    {block:Text}
+                    <!-- text.post -->
+                    <div class="row post">
+                        <img src="{PostAuthorPortraitURL-40}" alt="{PostAuthorTitle}" class="img-circle" />
+                        <span class="post-author">
+                        Publicado por: <a href="{PostAuthorURL}">{PostAuthorTitle}</a> <span class="pull-right">{block:Date}<a href="{PostURL}">{TimeAgo}</a>{/block:Date}</span>
+                        </span>
+                        {block:Title}
+                        <h1 id="title"><a href="{Permalink}">{Title}</a></h1> {/block:Title}
+                        <div class="post-description">
+                            {Body} {block:HasTags}
+                            <p>{block:Tags}<a href="{TagURL}" class="post-tag">#{Tag}</a>&nbsp;{/block:Tags}</p>{/block:HasTags}
+                        </div>
+                        <hr class="separator">
+                    </div>
+                    <!-- ./text.post -->{/block:Text} {block:Photo}
+                    <!-- photo.post -->
+                    <div class="row post">
+                        <img src="{PostAuthorPortraitURL-40}" alt="{PostAuthorTitle}" class="img-circle" />
+                        <span class="post-author">
+                        Publicado por: <a href="{PostAuthorURL}">{PostAuthorTitle}</a> <span class="pull-right">{block:Date}<a href="{PostURL}">{TimeAgo}</a>{/block:Date}</span>
+                        </span>
+                        <br>
+                        <div class="post-photo">
+                            <img src="{PhotoURL-500}" alt="{PhotoAlt}" />
+                        </div>
+                        {block:Caption}
+                        <div class="post-description">
+                            {Caption}{block:HasTags}
+                            <p>{block:Tags}<a href="{TagURL}" class="post-tag">#{Tag}</a>&nbsp;{/block:Tags}</p>{/block:HasTags}
+                        </div>
+                        {/block:Caption}
+                        <hr class="separator">
+                    </div>
+                    <!-- ./photo.post -->{/block:Photo} {block:Panorama}
+                    <!-- panorama.post -->
+                    <div class="row post">
+                        <a href="{Permalink}">{LinkOpenTag}<img src="{PhotoURL-Panorama}" alt="{PhotoAlt}" />{LinkCloseTag}</a>
+                        <div class="post-description">
+                            {block:Caption} {Caption} {/block:Caption}{block:HasTags}
+                            <p>{block:Tags}<a href="{TagURL}" class="post-tag">#{Tag}</a>&nbsp;{/block:Tags}</p>{/block:HasTags}
+                        </div>
+                        <hr class="separator">
+                    </div>
+                    <!-- ./panorama.post -->{/block:Panorama} {block:Photoset}
+                    <!-- photoset.post -->
+                    <div class="row post">
+                        <img src="{PostAuthorPortraitURL-40}" alt="{PostAuthorTitle}" class="img-circle" />
+                        <span class="post-author">
+                        Publicado por: <a href="{PostAuthorURL}">{PostAuthorTitle}</a> <span class="pull-right">{block:Date}<a href="{PostURL}">{TimeAgo}</a>{/block:Date}</span>
+                        </span>
+                        {Photoset-500}
+                        <div class="post-description">
+                            {block:Caption} {Caption} {/block:Caption}{block:HasTags}
+                            <p>{block:Tags}<a href="{TagURL}" class="post-tag">#{Tag}</a>&nbsp;{/block:Tags}</p>{/block:HasTags}
+                        </div>
+                        <hr class="separator">
+                    </div>
+                    <!-- ./photoset.post -->{/block:Photoset} {block:Quote}
+                    <!-- quote.post -->
+                    <div class="row post">
+                        <img src="{PostAuthorPortraitURL-40}" alt="{PostAuthorTitle}" class="img-circle" />
+                        <span class="post-author">
+                        Publicado por: <a href="{PostAuthorURL}">{PostAuthorTitle}</a> <span class="pull-right">{block:Date}<a href="{PostURL}">{TimeAgo}</a>{/block:Date}</span>
+                        </span>
+                        <blockquote>
+                            <h1 id="title"><a href="{Permalink}">"{Quote}"</a></h1>
+                        </blockquote>
+                        {block:Source}{Source}{/block:Source}
+                        <div class="post-description">{block:HasTags}
+                            <p>{block:Tags}<a href="{TagURL}" class="post-tag">#{Tag}</a>&nbsp;{/block:Tags}</p>{/block:HasTags}
+                        </div>
+                        <hr class="separator">
+                    </div>
+                    <!-- ./quote.post -->{/block:Quote} {block:Link}
+                    <!-- link.post -->
+                    <div class="row post">
+                        <img src="{PostAuthorPortraitURL-40}" alt="{PostAuthorTitle}" class="img-circle" />
+                        <span class="post-author">
+                        Publicado por: <a href="{PostAuthorURL}">{PostAuthorTitle}</a> <span class="pull-right">{block:Date}<a href="{PostURL}">{TimeAgo}</a>{/block:Date}</span>
+                        </span>{block:Thumbnail} <img src="{Thumbnail}" alt="{Name}" class="img-responsive img-thumbnail"> {/block:Thumbnail}
+                        <h1 id="title"><a {Target} href="{URL}">{Name}</a></h1> ({Host}) {block:Excerpt}
+                        <blockquote>{Excerpt}</blockquote> {/block:Excerpt}
+                        <div class="post-description">
+                            {block:Description}{Description}{/block:Description}{block:HasTags}
+                            <p>{block:Tags}<a href="{TagURL}" class="post-tag">#{Tag}</a>&nbsp;{/block:Tags}</p>{/block:HasTags}
+                        </div>
+                        <hr class="separator">
+                    </div>
+                    <!-- ./link.post -->{/block:Link} {block:Chat}
+                    <!-- chat.post -->
+                    <div class="row post">
+                        <img src="{PostAuthorPortraitURL-40}" alt="{PostAuthorTitle}" class="img-circle" />
+                        <span class="post-author">
+                        Publicado por: <a href="{PostAuthorURL}">{PostAuthorTitle}</a> <span class="pull-right">{block:Date}<a href="{PostURL}">{TimeAgo}</a>{/block:Date}</span>
+                        </span>
+                        {block:Title}
+                        <h1 id="title"><a href="{Permalink}">{Title}</a></h1>{/block:Title}
+                        <div class="post-description">
+                            <ul class="chat">
+                                {block:Lines}
+                                <li class="{Alt} user_{UserNumber}">
+                                    {block:Label}
+                                    <span class="label">{Label}</span> {/block:Label}{Line}
+                                </li>
+                                {/block:Lines}
+                            </ul>
+                            {block:Source}{Source}{/block:Source}{block:HasTags}
+                            <p>{block:Tags}<a href="{TagURL}" class="post-tag">#{Tag}</a>&nbsp;{/block:Tags}</p>{/block:HasTags}
+                        </div>
+                        <hr class="separator">
+                    </div>
+                    <!-- ./chat.post -->{/block:Chat} {block:Audio}
+                    <!-- audio.post -->
+                    <div class="row post">
+                        <img src="{PostAuthorPortraitURL-40}" alt="{PostAuthorTitle}" class="img-circle" />
+                        <span class="post-author">
+                        Publicado por: <a href="{PostAuthorURL}">{PostAuthorTitle}</a> <span class="pull-right">{block:Date}<a href="{PostURL}">{TimeAgo}</a>{/block:Date}</span>
+                        </span>
+                        <br> {block:AudioEmbed}{AudioEmbed-500}{/block:AudioEmbed}
+                        <div class="post-description">
+                            {block:Caption}{Caption}{/block:Caption}{block:HasTags}
+                            <p>{block:Tags}<a href="{TagURL}" class="post-tag">#{Tag}</a>&nbsp;{/block:Tags}</p>{/block:HasTags}
+                        </div>
+                        <hr class="separator">
+                    </div>
+                    <!-- ./audio.post -->{/block:Audio} {block:Video}
+                    <!-- video.post -->
+                    <div class="row post">
+                        <img src="{PostAuthorPortraitURL-40}" alt="{PostAuthorTitle}" class="img-circle" />
+                        <span class="post-author">
+                        Publicado por: <a href="{PostAuthorURL}">{PostAuthorTitle}</a> <span class="pull-right">{block:Date}<a href="{PostURL}">{TimeAgo}</a>{/block:Date}</span>
+                        </span>
+                        <div class="post-video">{VideoEmbed-500}</div>
+                        <div class="post-description">
+                            {block:Caption}{Caption}{/block:Caption}{block:HasTags}
+                            <p>{block:Tags}<a href="{TagURL}" class="post-tag">#{Tag}</a>&nbsp;{/block:Tags}</p>{/block:HasTags}
+                        </div>
+                        <hr class="separator">
+                    </div>
+                    <!-- ./video.post -->{/block:Video} {block:Answer}
+                    <!-- answer.post -->
+                    <div class="row post">
+                        <img src="{PostAuthorPortraitURL-40}" alt="{PostAuthorTitle}" class="img-circle" />
+                        <span class="post-author">
+                        Publicado por: <a href="{PostAuthorURL}">{PostAuthorTitle}</a> <span class="pull-right">{block:Date}<a href="{PostURL}">{TimeAgo}</a>{/block:Date}</span>
+                        </span>
+                        <h1 id="title"><a href="{Permalink}">{Title}</a></h1>
+                        <div class="post-description">{block:HasTags}
+                            <p>{block:Tags}<a href="{TagURL}" class="post-tag">#{Tag}</a>&nbsp;{/block:Tags}</p>{/block:HasTags}
+                        </div>
+                        <hr class="separator">
+                    </div>
+                    <!-- ./answer.post -->{/block:Answer}
+                    <!-- ./post -->
+                    {/block:Posts} </div>
+                <div class="col-md-4">
+                    <div class="row">search bar here</div>
+                    <div class="row">popular tags here</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="footer">
+        <footer>
+            <div class="left">
+                <div class="logo-footer"></div>
+            </div>
+            <div class="middle">
+                <div class="menu">
+                    {block:HasPages} {block:Pages}
+                    <a class="link" href="{URL}">{Label}</a>{/block:Pages} {/block:HasPages}
+                </div>
+            </div>
+            <div class="right">
+                <a class="icon icon-facebook" href="https://www.facebook.com/{text:Facebook}" target="_blank"></a>
+                <a class="icon icon-twitter" href="https://www.twitter.com/{text:Twitter}" target="_blank"></a>
+                <a class="icon icon-youtube" href="https://www.youtube.com/{text:YouTube}" target="_blank"></a>
+                <a class="icon icon-skype" href="skype:@{text:Skype}?call"></a>
+            </div>
+        </footer>
+    </section>
+    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-    </body>
+</body>
 
 </html>
